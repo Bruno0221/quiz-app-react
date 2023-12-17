@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --clr-primary-dark: hsl(0, 0%, 80%);
+  --clr-primary-light: hsl(0, 0%, 98%);
+
+  --clr-accent-dark: hsl(301, 61%, 65%);
+  --clr-accent-light: hsl(301, 61%, 50%);
+
+  --clr-black: hsl(227, 7%, 25%);
+  ---clr-white: hsl(0, 0%, 100%);
+
+  --clr-box-shadow: hsl(227, 7%, 70%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.other-theme {
+  --clr-primary-dark: hsl(217, 30%, 50%);
+  --clr-primary-light: hsl(217, 14%, 18%);
+
+  --clr-accent-dark: hsl(94, 39%, 80%);
+  --clr-accent-light: hsl(94, 39%, 60%);
+
+  --clr-black: hsl(220, 12%, 90%);
+  ---clr-white: hsl(217, 14%, 100%);
+
+  --clr-box-shadow: hsl(227, 7%, 30%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-primary-dark: hsl(217, 30%, 50%);
+    --clr-primary-light: hsl(217, 14%, 18%);
+
+    --clr-accent-dark: hsl(94, 39%, 80%);
+    --clr-accent-light: hsl(94, 39%, 60%);
+
+    --clr-black: hsl(220, 12%, 90%);
+    ---clr-white: hsl(217, 14%, 100%);
+
+    --clr-box-shadow: hsl(227, 7%, 30%);
+  }
+
+  .other-theme {
+    --clr-primary-dark: hsl(0, 0%, 80%);
+    --clr-primary-light: hsl(0, 0%, 98%);
+
+    --clr-accent-dark: hsl(301, 61%, 65%);
+    --clr-accent-light: hsl(301, 61%, 50%);
+
+    --clr-black: hsl(227, 7%, 25%);
+    ---clr-white: hsl(0, 0%, 100%);
+
+    --clr-box-shadow: hsl(227, 7%, 70%);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
+
+body {
+  box-sizing: border-box;
+  max-width: 375px;
+  margin: 0 auto;
+  background-color: var(--clr-primary-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Poppins, sans-serif;
+  color: black;
+  position: relative;
+  min-height: 100vh;
+}
+
+main {
+  padding: 2rem;
+  flex: 1;
 }
