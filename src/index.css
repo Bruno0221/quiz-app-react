@@ -55,10 +55,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600;1,700&display=swap");
 
 body {
+  background-color: var(--clr-primary-light);
+}
+
+#root {
   box-sizing: border-box;
   max-width: 375px;
   margin: 0 auto;
-  background-color: var(--clr-primary-light);
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -9,8 +9,6 @@ export default function Footer() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
-              width="256"
-              height="256"
               viewBox="0 0 256 256"
               xmlSpace="preserve"
               className="nav-icon"
@@ -40,8 +38,6 @@ export default function Footer() {
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               className="nav-icon"
             >
@@ -55,8 +51,6 @@ export default function Footer() {
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               viewBox="0 0 24 24"
               className="nav-icon"
             >
