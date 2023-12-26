@@ -6,19 +6,19 @@ export default function Card() {
     <article className="question-container">
       <input
         id="bookmark-checkbox"
-        className="bookmark-checkbox"
+        className="bookmark-checkbox hidden"
         type="checkbox"
       />
       <label htmlFor="bookmark-checkbox">
-        <BookmarkIcon />
+        <BookmarkIcon className="bookmark" />
       </label>
-      <h2>Question</h2>
-      <button></button>
-      <p>Answer</p>
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+      <h2 className="question">Question</h2>
+      <button className="answer-button">Show Answer</button>
+      <p className="answer">Answer</p>
+      <ul className="tags" aria-label="question tags">
+        <li className="tag">1</li>
+        <li className="tag">2</li>
+        <li className="tag">3</li>
       </ul>
     </article>
   );
