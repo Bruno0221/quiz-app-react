@@ -6,13 +6,15 @@ import { nanoid } from "nanoid";
 
 export default function Card({ id, question, answer, tags }) {
   const [answerHidden, setAnswerHidden] = useState(true);
+  const [isBookmarked, setIsBookmarked] = useState(false);
+  const [bookmarkedQuestions, setBookmarkedQuestions] = useState([]);
 
   function handleShowAnswer() {
     setAnswerHidden(!answerHidden);
   }
 
   function handleBookmarkQuestion(event) {
-    event.target.checked ? console.log("ckecked") : console.log("not checked");
+    event.target.checked && setIsBookmarked(!isBookmarked);
   }
 
   return (
