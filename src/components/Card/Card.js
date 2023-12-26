@@ -2,10 +2,10 @@ import "./Card.css";
 import { BookmarkIcon } from "../../assets/bookmark-icon";
 import { useState } from "react";
 
-export default function Card() {
+export default function Card({ question, answer }) {
   const [answerHidden, setAnswerHidden] = useState(true);
 
-  function showAnswer() {
+  function handleShowAnswer() {
     setAnswerHidden(!answerHidden);
   }
 
@@ -19,11 +19,11 @@ export default function Card() {
       <label htmlFor="bookmark-checkbox">
         <BookmarkIcon className="bookmark" />
       </label>
-      <h2 className="question">Question</h2>
-      <button className="answer-button" onClick={showAnswer}>
+      <h2 className="question">{question}</h2>
+      <button className="answer-button" onClick={handleShowAnswer}>
         {answerHidden ? "Show" : "Hide"} Answer
       </button>
-      <p className={answerHidden ? "answer hidden" : "answer"}>Answer</p>
+      <p className={answerHidden ? "answer hidden" : "answer"}>{answer}</p>
       <ul className="tags" aria-label="question tags">
         <li className="tag">1</li>
         <li className="tag">2</li>
