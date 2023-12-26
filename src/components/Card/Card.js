@@ -1,26 +1,23 @@
 import "./Card.css";
-import { BookmarkIcon } from "../../assets/bookmark-icon";
+import Bookmark from "../Bookmark/Bookmark";
 import Tag from "../Tag/Tag";
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
-export default function Card({ question, answer, tags }) {
+export default function Card({ id, question, answer, tags }) {
   const [answerHidden, setAnswerHidden] = useState(true);
 
   function handleShowAnswer() {
     setAnswerHidden(!answerHidden);
   }
 
+  function handleBookmarkQuestion(event) {
+    event.target.checked ? console.log("ckecked") : console.log("not checked");
+  }
+
   return (
     <article className="question-container">
-      <input
-        id="bookmark-checkbox"
-        className="bookmark-checkbox hidden"
-        type="checkbox"
-      />
-      <label htmlFor="bookmark-checkbox">
-        <BookmarkIcon className="bookmark" />
-      </label>
+      <Bookmark id={id} onBookmarkQuestion={handleBookmarkQuestion} />
       <h2 className="question">{question}</h2>
       <button className="answer-button" onClick={handleShowAnswer}>
         {answerHidden ? "Show" : "Hide"} Answer

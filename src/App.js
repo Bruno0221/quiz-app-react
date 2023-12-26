@@ -13,6 +13,7 @@ function App() {
           return (
             <Card
               key={question.id}
+              id={question.id}
               question={question.question}
               answer={question.answer}
               tags={question.tags}
