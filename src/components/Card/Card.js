@@ -1,8 +1,10 @@
 import "./Card.css";
 import { BookmarkIcon } from "../../assets/bookmark-icon";
+import Tag from "../Tag/Tag";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
-export default function Card({ question, answer }) {
+export default function Card({ question, answer, tags }) {
   const [answerHidden, setAnswerHidden] = useState(true);
 
   function handleShowAnswer() {
@@ -25,9 +27,9 @@ export default function Card({ question, answer }) {
       </button>
       <p className={answerHidden ? "answer hidden" : "answer"}>{answer}</p>
       <ul className="tags" aria-label="question tags">
-        <li className="tag">1</li>
-        <li className="tag">2</li>
-        <li className="tag">3</li>
+        {tags.map((tag) => (
+          <Tag key={nanoid()} content={tag} />
+        ))}
       </ul>
     </article>
   );
