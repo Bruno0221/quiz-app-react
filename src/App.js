@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Card from "./components/Card/Card";
+import { questionArray } from "./utils/InitialQuestions";
+import { useState } from "react";
 
 function App() {
+  const [questions, setQuestions] = useState(questionArray);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        {questions.map((question) => {
+          return (
+            <Card
+              key={question.id}
+              id={question.id}
+              question={question.question}
+              answer={question.answer}
+              tags={question.tags}
+            />
+          );
+        })}
+      </main>
+      <Footer />
+    </>
   );
 }
 

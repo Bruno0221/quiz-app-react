@@ -1,0 +1,28 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  background-color: var(--clr-primary-light);
+  width: 100%;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-icon {
+  margin-block: 1rem;
+  height: 3.5rem;
+  aspect-ratio: 1;
+  fill: var(--clr-black);
+}
+
+.nav-icon:hover {
+  fill: var(--clr-accent-light);
+  cursor: pointer;
+}
