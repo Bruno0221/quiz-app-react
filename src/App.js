@@ -8,8 +8,6 @@ import { useState } from "react";
 function App() {
   const [questions, setQuestions] = useState(questionArray);
   const [filter, setFilter] = useState("all");
-  // const [currentPageHome, setCurrentPageHome] = useState(true);
-  // const [currentPageBookmark, setCurrentPageBookmark] = useState(false);
   const bookmarkedQuestions = questions.filter(
     (question) => question.isBookmarked === true
   );
