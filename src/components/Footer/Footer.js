@@ -1,12 +1,16 @@
 import "./Footer.css";
 
-export default function Footer({ onFilterAll, onFilterBookmarked }) {
+export default function Footer({
+  onFilterAll,
+  onFilterBookmarked,
+  currentPage,
+}) {
   return (
     <footer className="footer">
       <ul className="footer-nav">
         <li className="footer-links">
           <a
-            className="current-page"
+            className={currentPage ? "current-page" : ""}
             href="#title"
             aria-label="Home Page"
             onClick={onFilterAll}
@@ -40,6 +44,7 @@ export default function Footer({ onFilterAll, onFilterBookmarked }) {
         </li>
         <li className="footer-links">
           <a
+            className={!currentPage ? "current-page" : ""}
             href="#title"
             aria-label="Bookmarks Page"
             onClick={onFilterBookmarked}

@@ -8,9 +8,13 @@ import { useState } from "react";
 function App() {
   const [questions, setQuestions] = useState(questionArray);
   const [filter, setFilter] = useState("all");
+  // const [currentPageHome, setCurrentPageHome] = useState(true);
+  // const [currentPageBookmark, setCurrentPageBookmark] = useState(false);
   const bookmarkedQuestions = questions.filter(
     (question) => question.isBookmarked === true
   );
+  const renderedQuestions = filter === "all" ? questions : bookmarkedQuestions;
+  const currentPage = filter === "all";
 
   function handleBookmarkQuestion(id) {
     setQuestions(
@@ -29,8 +33,6 @@ function App() {
     setFilter("bookmarked");
   }
 
-  const renderedQuestions = filter === "all" ? questions : bookmarkedQuestions;
-
   return (
     <>
       <Header />
@@ -46,6 +48,7 @@ function App() {
         })}
       </main>
       <Footer
+        currentPage={currentPage}
         onFilterAll={handleFilterAll}
         onFilterBookmarked={handleFilterBookmarked}
       />
