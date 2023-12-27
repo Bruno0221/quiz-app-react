@@ -7,6 +7,17 @@ import { useState } from "react";
 
 function App() {
   const [questions, setQuestions] = useState(questionArray);
+  const [bookmarks, setBookmarks] = useState(questions);
+
+  function handleBookmarkQuestion(id) {
+    setQuestions(
+      questions.map((question) =>
+        question.id === id
+          ? { ...question, isBookmarked: !question.isBookmarked }
+          : question
+      )
+    );
+  }
   return (
     <>
       <Header />
@@ -15,10 +26,8 @@ function App() {
           return (
             <Card
               key={question.id}
-              id={question.id}
-              question={question.question}
-              answer={question.answer}
-              tags={question.tags}
+              question={question}
+              onBookmarkQuestion={handleBookmarkQuestion}
             />
           );
         })}
