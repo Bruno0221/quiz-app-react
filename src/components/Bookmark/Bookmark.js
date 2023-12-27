@@ -8,7 +8,7 @@ export default function Bookmark({ id, onBookmarkQuestion }) {
         id={id}
         className="bookmark-checkbox hidden"
         type="checkbox"
-        onClick={() => onBookmarkQuestion(id)}
+        onChange={() => onBookmarkQuestion(id)}
         aria-hidden="true"
       />
       <label htmlFor={id} aria-label="icon to bookmark question">
