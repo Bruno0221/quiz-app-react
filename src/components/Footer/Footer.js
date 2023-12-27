@@ -1,11 +1,16 @@
 import "./Footer.css";
 
-export default function Footer() {
+export default function Footer({ onFilterAll, onFilterBookmarked }) {
   return (
     <footer className="footer">
       <ul className="footer-nav">
         <li className="footer-links">
-          <a className="current-page" href="#title" aria-label="Home Page">
+          <a
+            className="current-page"
+            href="#title"
+            aria-label="Home Page"
+            onClick={onFilterAll}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
@@ -34,7 +39,11 @@ export default function Footer() {
           </a>
         </li>
         <li className="footer-links">
-          <a href="#title" aria-label="Bookmarks Page">
+          <a
+            href="#title"
+            aria-label="Bookmarks Page"
+            onClick={onFilterBookmarked}
+          >
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
