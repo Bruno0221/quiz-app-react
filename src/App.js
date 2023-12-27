@@ -11,6 +11,8 @@ function App() {
   const bookmarkedQuestions = questions.filter(
     (question) => question.isBookmarked === true
   );
+  const renderedQuestions = filter === "all" ? questions : bookmarkedQuestions;
+  const currentPage = filter === "all";
 
   function handleBookmarkQuestion(id) {
     setQuestions(
@@ -29,8 +31,6 @@ function App() {
     setFilter("bookmarked");
   }
 
-  const renderedQuestions = filter === "all" ? questions : bookmarkedQuestions;
-
   return (
     <>
       <Header />
@@ -46,6 +46,7 @@ function App() {
         })}
       </main>
       <Footer
+        currentPage={currentPage}
         onFilterAll={handleFilterAll}
         onFilterBookmarked={handleFilterBookmarked}
       />
