@@ -4,8 +4,9 @@ import { ReactComponent as BookmarkIcon } from "../../assets/bookmark.svg";
 import { ReactComponent as UserIcon } from "../../assets/user-icon.svg";
 
 export default function Footer({
-  onFilterAll,
-  onFilterBookmarked,
+  onRenderAll,
+  onRenderBookmarked,
+  onRenderProfile,
   currentPage,
 }) {
   return (
@@ -16,7 +17,7 @@ export default function Footer({
             className={currentPage ? "current-page" : ""}
             href="#title"
             aria-label="Home Page"
-            onClick={onFilterAll}
+            onClick={onRenderAll}
           >
             <HomeIcon className="nav-icon" />
           </a>
@@ -26,13 +27,13 @@ export default function Footer({
             className={!currentPage ? "current-page" : ""}
             href="#title"
             aria-label="Bookmarks Page"
-            onClick={onFilterBookmarked}
+            onClick={onRenderBookmarked}
           >
             <BookmarkIcon className="nav-icon" />
           </a>
         </li>
         <li className="footer-links">
-          <a href="#title" aria-label="Profile Page">
+          <a href="#title" aria-label="Profile Page" onClick={onRenderProfile}>
             <UserIcon className="nav-icon" />
           </a>
         </li>
