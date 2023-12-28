@@ -2,6 +2,7 @@ import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Card from "./components/Card/Card";
+import UserProfile from "./components/UserProfile/UserProfile";
 import { questionArray } from "./utils/InitialQuestions";
 import { useState } from "react";
 
@@ -35,6 +36,7 @@ function App() {
     <>
       <Header />
       <main>
+        <UserProfile />
         {renderedQuestions.map((question) => {
           return (
             <Card
