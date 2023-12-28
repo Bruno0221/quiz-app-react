@@ -1,5 +1,5 @@
 import "./Bookmark.css";
-import { BookmarkIcon } from "../../assets/bookmark-icon";
+import { ReactComponent as BookmarkIcon } from "../../assets/bookmark.svg";
 
 export default function Bookmark({ id, onBookmarkQuestion }) {
   return (
