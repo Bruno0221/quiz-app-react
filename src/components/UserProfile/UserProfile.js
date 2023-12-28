@@ -1,9 +1,11 @@
 import "./UserProfile.css";
 import ProfilePicture from "../../assets/profile-picture.jpg";
-import BookmarkIcon from "../../assets/bookmark.svg";
-import QuestionmarkIcon from "../../assets/questionmark-icon.svg";
+import CounterSection from "../CounterSection/CounterSection";
 
-export default function UserProfile() {
+export default function UserProfile({
+  allQuestionCount,
+  bookmarkedQuestionCount,
+}) {
   return (
     <article className="question-container">
       <section className="profile-header">
@@ -17,16 +19,10 @@ export default function UserProfile() {
           repudiandae delectus cupiditate reprehenderit placeat earum sed
           pariatur facilis quasi voluptatum.
         </p>
-        <div className="about-counter">
-          <div className="counter question-counter">
-            <img src={QuestionmarkIcon} alt="Question Counter"></img>
-            <span className="question-count">4</span>
-          </div>
-          <div className="counter bookmark-counter">
-            <img src={BookmarkIcon} alt="Bookmark Counter"></img>
-            <span className="bookmark-count">0</span>
-          </div>
-        </div>
+        <CounterSection
+          allQuestionCount={allQuestionCount}
+          bookmarkedQuestionCount={bookmarkedQuestionCount}
+        />
       </section>
       <section className="profile-settings">
         <h2 className="settings-header">Settings</h2>

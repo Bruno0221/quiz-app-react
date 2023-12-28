@@ -13,7 +13,7 @@ function App() {
     (question) => question.isBookmarked === true
   );
   const renderedQuestions = render === "all" ? questions : bookmarkedQuestions;
-  const currentPage = render === "all";
+  console.log(questions.length);
 
   function handleBookmarkQuestion(id) {
     setQuestions(
@@ -39,7 +39,12 @@ function App() {
     <>
       <Header />
       <main>
-        {render === "profile" && <UserProfile />}
+        {render === "profile" && (
+          <UserProfile
+            allQuestionCount={questions.length}
+            bookmarkedQuestionCount={bookmarkedQuestions.length}
+          />
+        )}
 
         {renderedQuestions.map((question) => {
           return (
