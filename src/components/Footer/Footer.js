@@ -7,14 +7,14 @@ export default function Footer({
   onRenderAll,
   onRenderBookmarked,
   onRenderProfile,
-  currentPage,
+  render,
 }) {
   return (
     <footer className="footer">
       <ul className="footer-nav">
         <li className="footer-links">
           <a
-            className={currentPage ? "current-page" : ""}
+            className={render === "all" ? "current-page" : ""}
             href="#title"
             aria-label="Home Page"
             onClick={onRenderAll}
@@ -24,7 +24,7 @@ export default function Footer({
         </li>
         <li className="footer-links">
           <a
-            className={!currentPage ? "current-page" : ""}
+            className={render === "bookmarked" ? "current-page" : ""}
             href="#title"
             aria-label="Bookmarks Page"
             onClick={onRenderBookmarked}
@@ -33,7 +33,12 @@ export default function Footer({
           </a>
         </li>
         <li className="footer-links">
-          <a href="#title" aria-label="Profile Page" onClick={onRenderProfile}>
+          <a
+            className={render === "profile" ? "current-page" : ""}
+            href="#title"
+            aria-label="Profile Page"
+            onClick={onRenderProfile}
+          >
             <UserIcon className="nav-icon" />
           </a>
         </li>

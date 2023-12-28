@@ -52,7 +52,7 @@ function App() {
         })}
       </main>
       <Footer
-        currentPage={currentPage}
+        render={render}
         onRenderAll={handleRenderAll}
         onRenderBookmarked={handleRenderBookmarked}
         onRenderProfile={handleRenderProfile}
