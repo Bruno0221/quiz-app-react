@@ -1,0 +1,35 @@
+.toggle {
+  display: none;
+}
+
+.toggle + label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.toggle + label::before {
+  content: "";
+  width: 3em;
+  height: 1.5em;
+  background-color: var(--clr-primary-light);
+  border-radius: 1em;
+  margin-right: 1em;
+  transition: 100ms ease-in-out;
+}
+.toggle + label::after {
+  position: absolute;
+  left: 0.1em;
+  content: "";
+  width: 1.4em;
+  aspect-ratio: 1;
+  background-color: var(--clr-accent-light);
+  border-radius: 50%;
+  transition: 250ms ease-in-out;
+}
+
+.toggle:checked + label::after {
+  transform: translateX(100%);
+  background-color: var(--clr-accent-light);
+}

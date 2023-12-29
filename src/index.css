@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --clr-primary-dark: hsl(0, 0%, 80%);
   --clr-primary-light: hsl(0, 0%, 98%);
 
@@ -22,7 +22,7 @@
   ---clr-white: hsl(217, 14%, 100%);
 
   --clr-box-shadow: hsl(227, 7%, 30%);
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {

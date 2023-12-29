@@ -1,3 +1,4 @@
+import "./CounterSection.css";
 import BookmarkIcon from "../../assets/bookmark.svg";
 import QuestionmarkIcon from "../../assets/questionmark-icon.svg";
 import Counter from "../Counter/Counter";

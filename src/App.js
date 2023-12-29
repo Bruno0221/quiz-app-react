@@ -1,7 +1,7 @@
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import Card from "./components/Card/Card";
+import CardSection from "./components/CardSection/CardSection";
 import UserProfile from "./components/UserProfile/UserProfile";
 import { questionArray } from "./utils/InitialQuestions";
 import { useState } from "react";
@@ -35,26 +35,27 @@ function App() {
     setRender("profile");
   }
 
+  function handleToggleDarkMode() {
+    document.body.classList.toggle("other-theme");
+  }
+
   return (
     <>
       <Header />
       <main>
-        {render === "profile" && (
+        {render === "all" || render === "bookmarked" ? (
+          // TODO Bookmarks are not checked after loading profile
+          <CardSection
+            renderedQuestions={renderedQuestions}
+            onBookmarkQuestion={handleBookmarkQuestion}
+          />
+        ) : (
           <UserProfile
             allQuestionCount={questions.length}
             bookmarkedQuestionCount={bookmarkedQuestions.length}
+            onToggleDarkMode={handleToggleDarkMode}
           />
         )}
-
-        {renderedQuestions.map((question) => {
-          return (
-            <Card
-              key={question.id}
-              question={question}
-              onBookmarkQuestion={handleBookmarkQuestion}
-            />
-          );
-        })}
       </main>
       <Footer
         render={render}

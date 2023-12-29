@@ -1,10 +1,12 @@
 import "./UserProfile.css";
 import ProfilePicture from "../../assets/profile-picture.jpg";
 import CounterSection from "../CounterSection/CounterSection";
+import ToggleButton from "../ToggleButton/ToggleButton";
 
 export default function UserProfile({
   allQuestionCount,
   bookmarkedQuestionCount,
+  onToggleDarkMode,
 }) {
   return (
     <article className="question-container">
@@ -26,15 +28,10 @@ export default function UserProfile({
       </section>
       <section className="profile-settings">
         <h2 className="settings-header">Settings</h2>
-        <div className="setting-container">
-          <input
-            type="checkbox"
-            className="toggle"
-            name="dark-mode"
-            id="dark-mode"
-          />
-          <label htmlFor="dark-mode">Dark Mode</label>
-        </div>
+        <ToggleButton
+          className="setting-container"
+          onToggleDarkMode={onToggleDarkMode}
+        />
         <div className="setting-container">
           <button className="question-button">+</button>
           <label className="add-question-label">Add New Question</label>
