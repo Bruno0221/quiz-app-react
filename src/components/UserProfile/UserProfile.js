@@ -2,18 +2,25 @@ import "./UserProfile.css";
 import ProfilePicture from "../../assets/profile-picture.jpg";
 import CounterSection from "../CounterSection/CounterSection";
 import ToggleButton from "../ToggleButton/ToggleButton";
-import QuestionDialog from "../QuestionDialog/QuestionDialog";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import NewQuestionForm from "../NewQuestionForm/NewQuestionForm";
+import Dialog from "../Dialog/Dialog";
 
 export default function UserProfile({
   allQuestionCount,
   bookmarkedQuestionCount,
   onToggleDarkMode,
 }) {
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogContent, setDialogContent] = useState(null);
+  const dialogRef = useRef(null);
 
   function handleToggleDialog() {
-    setDialogOpen(!dialogOpen);
+    if (!dialogRef.current) {
+      return;
+    }
+    dialogRef.current.hasAttribute("open")
+      ? dialogRef.current.close()
+      : dialogRef.current.showModal();
   }
 
   return (
@@ -46,7 +53,9 @@ export default function UserProfile({
           </button>
           <label className="add-question-label">Add New Question</label>
         </div>
-        <QuestionDialog dialogOpen={dialogOpen} />
+        <dialog ref={dialogRef} className="question-dialog">
+          <NewQuestionForm />
+        </dialog>
       </section>
     </article>
   );
