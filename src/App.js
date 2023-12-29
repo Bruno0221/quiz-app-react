@@ -13,7 +13,6 @@ function App() {
     (question) => question.isBookmarked === true
   );
   const renderedQuestions = render === "all" ? questions : bookmarkedQuestions;
-  console.log(questions.length);
 
   function handleBookmarkQuestion(id) {
     setQuestions(
