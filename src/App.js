@@ -5,6 +5,7 @@ import CardSection from "./components/CardSection/CardSection";
 import UserProfile from "./components/UserProfile/UserProfile";
 import { questionArray } from "./utils/InitialQuestions";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 function App() {
   const [questions, setQuestions] = useState(questionArray);
@@ -23,6 +24,20 @@ function App() {
       )
     );
   }
+
+  function handleAddQuestion(data) {
+    setQuestions([
+      {
+        id: nanoid(),
+        question: data.question,
+        answer: data.answer,
+        tags: [data.tag],
+        isBookmarked: false,
+      },
+      ...questions,
+    ]);
+  }
+
   function handleRenderAll() {
     setRender("all");
   }
@@ -53,6 +68,7 @@ function App() {
             allQuestionCount={questions.length}
             bookmarkedQuestionCount={bookmarkedQuestions.length}
             onToggleDarkMode={handleToggleDarkMode}
+            onAddQuestion={handleAddQuestion}
           />
         )}
       </main>

@@ -10,8 +10,8 @@ export default function UserProfile({
   allQuestionCount,
   bookmarkedQuestionCount,
   onToggleDarkMode,
+  onAddQuestion,
 }) {
-  const [dialogContent, setDialogContent] = useState(null);
   const dialogRef = useRef(null);
 
   function handleToggleDialog() {
@@ -53,8 +53,19 @@ export default function UserProfile({
           </button>
           <label className="add-question-label">Add New Question</label>
         </div>
-        <dialog ref={dialogRef} className="question-dialog">
-          <NewQuestionForm />
+        <dialog
+          ref={dialogRef}
+          className="question-dialog"
+          onClick={(event) => {
+            if (event.currentTarget === event.target) {
+              handleToggleDialog();
+            }
+          }}
+        >
+          <NewQuestionForm
+            onAddQuestion={onAddQuestion}
+            onToggleDialog={handleToggleDialog}
+          />
         </dialog>
       </section>
     </article>

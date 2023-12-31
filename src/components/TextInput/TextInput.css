@@ -1,0 +1,12 @@
+.input-container {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1rem;
+}
+
+.form-input {
+  background-color: var(--clr-primary-dark);
+  border: 1px solid var(--clr-accent-dark);
+  outline: none;
+  font-family: inherit;
+}
