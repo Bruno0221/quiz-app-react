@@ -53,15 +53,7 @@ export default function UserProfile({
           </button>
           <label className="add-question-label">Add New Question</label>
         </div>
-        <dialog
-          ref={dialogRef}
-          className="question-dialog"
-          onClick={(event) => {
-            if (event.currentTarget === event.target) {
-              handleToggleDialog();
-            }
-          }}
-        >
+        <dialog ref={dialogRef} className="question-dialog">
           <NewQuestionForm
             onAddQuestion={onAddQuestion}
             onToggleDialog={handleToggleDialog}
