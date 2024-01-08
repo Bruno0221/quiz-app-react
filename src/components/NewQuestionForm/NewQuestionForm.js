@@ -26,11 +26,7 @@ export default function NewQuestionForm({ onToggleDialog, onAddQuestion }) {
           New Tag:
         </label>
         <div className="dialog-button-container">
-          <button
-            className="dialog-button"
-            form="add-question-form"
-            type="submit"
-          >
+          <button className="dialog-button" type="submit">
             Add Question
           </button>
           <button className="dialog-button" onClick={onToggleDialog}>

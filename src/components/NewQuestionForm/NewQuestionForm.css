@@ -12,8 +12,8 @@
 
 .dialog-container {
   background-color: var(--clr-primary-dark);
-  padding: 1rem;
-  margin-bottom: 2rem;
+  /* padding: 1rem;
+  margin-bottom: 2rem; */
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -35,13 +35,14 @@
 
 .dialog-button-container {
   display: flex;
+  width: 100%;
   gap: 1rem;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .dialog-button {
   margin-block: 0.5rem;
-  width: 33%;
+  width: 50%;
   height: 3rem;
   padding: 1rem;
   border-radius: 1em;
